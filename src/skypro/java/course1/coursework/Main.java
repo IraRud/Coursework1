@@ -5,31 +5,30 @@ public class Main {
     private static Employee[] employees = new Employee[10];  // поле типа Employee[]
 
     public static Employee[] generateEmployees() { // создание сотрудников
-        employees = new Employee[]{
-                new Employee("Максим Финагеев", 1, 20_437),
-                new Employee("Андрей Шестопалов", 2, 19_000),
-                new Employee("Александр Горохов", 3, 10_568),
-                new Employee("Алиса Хорватова", 1, 12_000),
-                new Employee("кто-то еще", 4, 35_000),
-                new Employee("кто-то еще", 5, 25_000),
-                new Employee("Игорь Долгих", 2, 40_341),
-                new Employee("кто-то еще", 3, 27_000),
-                new Employee("кто-то еще", 3, 27_000),
-                new Employee("кто-то еще", 4, 36_000),
-        };
+        employees[0] = new Employee("Максим Финагеев", 1, 20_437);
+        employees[1] = new Employee("Андрей Шестопалов", 2, 19_000);
+        employees[2] = new Employee("Александр Горохов", 3, 10_568);
+        employees[3] = new Employee("Алиса Хорватова", 1, 12_000);
+        employees[4] = new Employee("Игорь Долгих", 2, 40_341);
+        employees[5] = new Employee("Максим Затеев", 4, 21_237);
+        employees[6] = new Employee("Александра Колосова", 5, 27_445);
+        employees[7] = new Employee("Полина Гагарина", 3, 23_400);
+        employees[8] = new Employee("Сергей Лазарев", 5, 30_000);
+        employees[9] = new Employee("Иван Курочкин", 4, 20_000);
         return employees;
     }
 
     public static void basicDifficulty() {  // БАЗОВАЯ СЛОЖНОСТЬ
         System.out.println("- БАЗОВАЯ СЛОЖНОСТЬ -");
         employees = generateEmployees();
+        System.out.println("Список сотрудников: ");
         printEmployees();
         int sumSalary = calculateSumSalary();
         System.out.println("Сумма затрат на зарплаты в месяц составила: " + sumSalary + ".");
         Employee employeeWithMinSalary = findEmployeeWithMinSalary();
-        System.out.println("Сотрудник c минимальной зарплатой: " + employeeWithMinSalary + ".");
+        System.out.println("Сотрудник c минимальной зарплатой -> " + employeeWithMinSalary + ".");
         Employee employeeWithMaxSalary = findEmployeeWithMaxSalary();
-        System.out.println("Сотрудник c максимальной зарплатой: " + employeeWithMaxSalary + ".");
+        System.out.println("Сотрудник c максимальной зарплатой -> " + employeeWithMaxSalary + ".");
         double averageSalary = calculateAverageSalary();
         System.out.println("Среднее значение зарплат: " + averageSalary + ".");
         System.out.println("Ф.И.О. всех сотрудников: ");
