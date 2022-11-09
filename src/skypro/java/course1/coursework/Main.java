@@ -142,7 +142,6 @@ public class Main {
     public static Employee findDepartmentEmployeeWithMinSalary(int department) {    // поиск сотрудника отдела (параметр) с минимальной зарплатой
         int min = Integer.MAX_VALUE;    // присваиваем максимальное значение типа int, любая зп сотрудника априори меньше
         Employee result = null;
-//        checkEmployeesDepartment(department);
         for (Employee employee : employees) {
             if (employee.getDepartment() == department) {
                 if (employee.getSalary() <= min) {  // сравниваем с минимальным значением
