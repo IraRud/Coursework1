@@ -4,7 +4,7 @@ public class Main {
 
     private static Employee[] employees = new Employee[10];  // поле типа Employee[]
 
-    public static Employee[] generateEmployees() { // создание сотрудников
+    public static void generateEmployees() { // создание сотрудников
         employees[0] = new Employee("Максим Финагеев", 1, 20_437);
         employees[1] = new Employee("Андрей Шестопалов", 2, 19_000);
         employees[2] = new Employee("Александр Горохов", 3, 10_568);
@@ -15,12 +15,11 @@ public class Main {
         employees[7] = new Employee("Полина Гагарина", 3, 23_400);
         employees[8] = new Employee("Сергей Лазарев", 5, 30_000);
         employees[9] = new Employee("Иван Курочкин", 4, 20_000);
-        return employees;
     }
 
     public static void basicDifficulty() {  // БАЗОВАЯ СЛОЖНОСТЬ
+        printSpecialSymbol();
         System.out.println("- БАЗОВАЯ СЛОЖНОСТЬ -");
-        employees = generateEmployees();
         System.out.println("Список сотрудников: ");
         printEmployees();
         int sumSalary = calculateSumSalary();
@@ -35,8 +34,32 @@ public class Main {
         printFullName();
     }
 
+    public static void increasedDifficulty() {  // ПОВЫШЕННАЯ СЛОЖНОСТЬ
+        /* Создать дополнительные статические методы для решения следующих задач.
+1. Проиндексировать зарплату (вызвать изменение зарплат у всех сотрудников на величину аргумента в %).
+2. Получить в качестве параметра номер отдела (1–5) и найти (всего 6 методов):
+    1. Сотрудника с минимальной зарплатой.
+    2. Сотрудника с максимальной зарплатой.
+    3. Сумму затрат на зарплату по отделу.
+    4. Среднюю зарплату по отделу (учесть, что количество людей в отделе отличается от employees.length).
+    5. Проиндексировать зарплату всех сотрудников отдела на процент, который приходит в качестве параметра.
+    6. Напечатать всех сотрудников отдела (все данные, кроме отдела).
+3. Получить в качестве параметра число и найти:
+    1. Всех сотрудников с зарплатой меньше числа (вывести id, Ф. И. О. и зарплатой в консоль).
+    2. Всех сотрудников с зарплатой больше (или равно) числа (вывести id, Ф. И. О. и зарплатой в консоль).*/
+        printSpecialSymbol();
+        System.out.println("- ПОВЫШЕННАЯ СЛОЖНОСТЬ -");
+
+    }
+
     public static void main(String[] args) {
+        generateEmployees();    // создание списка сотрудников
         basicDifficulty();  // БАЗОВАЯ СЛОЖНОСТЬ
+        increasedDifficulty();  // ПОВЫШЕННАЯ СЛОЖНОСТЬ
+    }
+
+    public static void printSpecialSymbol() {
+        System.out.println("+ ===================== +");
     }
 
     public static void printEmployees() {    // печать сотрудников
